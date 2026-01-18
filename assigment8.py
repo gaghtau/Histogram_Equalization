@@ -2,8 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- Загружаем изображение ---
-image_path = "image13_1736425790.jpg"  # сюда вставь своё изображение
+image_path = "image13_1736425790.jpg"  
 image = cv2.imread(image_path)
 if image is None:
     raise FileNotFoundError(f"Не удалось открыть {image_path}")

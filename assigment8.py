@@ -7,7 +7,6 @@ image = cv2.imread(image_path)
 if image is None:
     raise FileNotFoundError(f"Не удалось открыть {image_path}")
 
-# --- Цветное изображение и гистограммы BGR ---
 b_channel, g_channel, r_channel = cv2.split(image)
 channels = [b_channel, g_channel, r_channel]
 colors = ["b", "g", "r"]
@@ -23,7 +22,6 @@ plt.title("Гистограммы BGR каналов")
 plt.xlabel("Значение пикселя")
 plt.ylabel("Количество пикселей")
 
-# --- Серое изображение и выравнивание гистограммы ---
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 equalized = cv2.equalizeHist(gray)
 
@@ -38,7 +36,6 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# --- Показываем изображения ---
 cv2.imshow("Оригинал", image)
 cv2.imshow("Серое с выравниванием", equalized)
 cv2.waitKey(0)
